@@ -20,6 +20,6 @@ Please prepare the dataset in advance and modify the ImageNet data storage path 
 python main.py
 ```
 
-## 2. Acknowledgement
+## 4. Acknowledgement
 
 We would appreciate it if our paper and repo are helpful to you!
