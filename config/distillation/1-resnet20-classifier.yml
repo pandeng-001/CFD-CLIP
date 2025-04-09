@@ -1,0 +1,23 @@
+model:
+  model_name: (CLIP)ResnetV2-20-dis             # Comparative experiments with existing methods -1
+  group_name: 1-(CLIP)resnet20-classifier
+  learning_rate: 0.001
+  weight_decay: 1e-4
+  optimizer: Adam 
+  cuda: True
+  clip_model: openai/clip-vit-base-patch32      # Only this specific CLIP model is supported for now
+  num_epochs: 140                               # training epochs
+  prompt: coarse                                # [coarse, fine]  
+  else:  scheduler(lr)
+
+dataset:
+  name: cifar100                                # dataset name
+  num_classes: 100
+  dataset_loaction: ./data                      # dataset location
+  batch_size: 512
+
+save_train_log:
+  train_train_location: ./log                   # Output directories: img/, txt/, save/
+
+save_model_pth:
+  save_model_pth_location: ./log                # Model save path

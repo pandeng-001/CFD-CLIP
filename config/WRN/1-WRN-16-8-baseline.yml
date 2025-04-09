@@ -1,0 +1,20 @@
+model:
+  model_name: WRN-16-8              # Experiments on baseline network models
+  group_name: 1-WRN-16-8-base       # differentiate experimental groups
+  learning_rate: 0.1
+  weight_decay: 1e-4
+  optimizer: SGD                    # Temporarily supports SGD optimizer only.
+  cuda: True
+  num_epochs: 150
+
+dataset:
+  name: cifar100
+  num_classes: 100
+  dataset_loaction: ./data
+  batch_size: 512
+
+save_train_log:
+  train_train_location: ./log       # Output directories: img/, txt/, save/
+
+save_model_pth:
+  save_model_pth_location: ./log    # Model save path

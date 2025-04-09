@@ -1,0 +1,23 @@
+model:
+  model_name: (CLIP)WRN-16-8-(dao2)-a     # Ablation studies are performed to verify the output layer's features-3
+  group_name: 3-(CLIP)WRN-16-8-classifier
+  learning_rate: 0.001
+  weight_decay: 1e-4
+  optimizer: Adam 
+  cuda: True
+  clip_model: openai/clip-vit-base-patch32     
+  num_epochs: 100              
+  featureAlign: 128
+  prompt: coarse       
+
+dataset:
+  name: cifar100            
+  num_classes: 100
+  dataset_loaction: ./data
+  batch_size: 512
+
+save_train_log:
+  train_train_location: ./log     
+
+save_model_pth:
+  save_model_pth_location: ./log   

@@ -1,0 +1,22 @@
+model:
+  model_name: (CLIP)resnet-50                  # Experiments on the CDF-CLIP Method
+  group_name: 6-(CLIP)resnet50-classifier
+  learning_rate: 0.001
+  weight_decay: 1e-4
+  optimizer: Adam 
+  cuda: True
+  clip_model: openai/clip-vit-base-patch32     
+  num_epochs: 130              
+  prompt: coarse        
+
+dataset:
+  name: cifar100             
+  num_classes: 100
+  dataset_loaction: ./data
+  batch_size: 256
+
+save_train_log:
+  train_train_location: ./log    
+
+save_model_pth:
+  save_model_pth_location: ./log  

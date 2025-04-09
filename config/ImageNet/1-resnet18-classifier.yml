@@ -1,0 +1,23 @@
+model:
+  model_name: (CLIP)resnet-18
+  group_name: 1-(CLIP)resnet18-classifier
+  learning_rate: 0.001
+  weight_decay: 1e-4
+  optimizer: Adam 
+  cuda: True
+  clip_model: openai/clip-vit-base-patch32     # 暂只支持这一个 多模态预训练模型
+  num_epochs: 10             # 80 训练 经过处理后的 resnet+分类器
+  prompt: coarse        # [coarse, fine]  仅支持 粗粒度和细粒度
+  else:  scheduler(lr)
+
+dataset:
+  name: imagenet             # 数据集的名称
+  num_classes: 1000
+  dataset_loaction: ./data
+  batch_size: 64
+
+save_train_log:
+  train_train_location: ./log      # 用来保存训练产生的文件 有 img/  txt/ save/
+
+save_model_pth:
+  save_model_pth_location: ./log   # 模型保存的位置

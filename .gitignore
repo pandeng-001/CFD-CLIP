@@ -1,0 +1,9 @@
+data/
+model/__pycache__
+model/log
+model/save
+model/img
+fun_tools/__pycache__
+log/
+else/
+plot_img/__pycache__
